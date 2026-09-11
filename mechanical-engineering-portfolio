@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mechanical Engineering Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #101820;
+            color: white;
+        }
+
+        header {
+            background: #1f2d3a;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #f39c12;
+        }
+
+        section {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #f39c12;
+            color: black;
+            padding: 12px 20px;
+            border-radius: 20px;
+        }
+
+        .project {
+            background: #1f2d3a;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #f39c12;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1f2d3a;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>⚙️ Mechanical Engineer</h1>
+
+    <p>Mechanical Engineering Student | CAD | Manufacturing | Design</p>
+
+</header>
+
+<section>
+
+    <h2>👨‍🔧 About Me</h2>
+
+    <p>
+        I am a Mechanical Engineering student interested in
+        machine design, manufacturing, thermal engineering
+        and engineering software.
+    </p>
+
+</section>
+
+<section>
+
+    <h2>🛠️ Skills</h2>
+
+    <div class="skills">
+        <div class="skill">AutoCAD</div>
+        <div class="skill">SolidWorks</div>
+        <div class="skill">ANSYS</div>
+        <div class="skill">CAD Design</div>
+        <div class="skill">Manufacturing</div>
+        <div class="skill">Python</div>
+    </div>
+
+</section>
+
+<section>
+
+    <h2>🚀 Projects</h2>
+
+    <div class="project">
+        <h3>Gearbox Design</h3>
+        <p>Designed and analyzed a basic gear transmission system.</p>
+    </div>
+
+    <div class="project">
+        <h3>Heat Transfer Analysis</h3>
+        <p>Studied heat conduction through a metal plate.</p>
+    </div>
+
+    <div class="project">
+        <h3>Lathe Operation Study</h3>
+        <p>Calculated cutting speed and machining parameters.</p>
+    </div>
+
+</section>
+
+<footer>
+
+    <p>© 2026 Mechanical Engineering Portfolio</p>
+
+</footer>
+
+</body>
+</html>
