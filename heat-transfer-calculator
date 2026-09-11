@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heat Transfer Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #7b241c;
+            color: white;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .box {
+            background: #922b21;
+            padding: 30px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        input, button {
+            width: 90%;
+            padding: 12px;
+            margin: 7px;
+        }
+
+        button {
+            background: #f4d03f;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🔥 Heat Transfer</h1>
+
+<input id="k" placeholder="Thermal conductivity k">
+<input id="area" placeholder="Area A (m²)">
+<input id="temp" placeholder="Temperature difference ΔT">
+<input id="length" placeholder="Thickness L (m)">
+
+<button onclick="calculate()">Calculate Heat Transfer</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+function calculate() {
+
+    const k = Number(document.getElementById("k").value);
+    const area = Number(document.getElementById("area").value);
+    const temp = Number(document.getElementById("temp").value);
+    const length = Number(document.getElementById("length").value);
+
+    if (k <= 0 || area <= 0 || temp <= 0 || length <= 0) {
+        result.textContent = "Enter valid values";
+        return;
+    }
+
+    const heat = (k * area * temp) / length;
+
+    result.textContent =
+        "Heat Transfer Rate = " + heat.toFixed(2) + " W";
+}
+</script>
+
+</body>
+</html>
