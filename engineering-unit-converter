@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Engineering Unit Converter</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #117864;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .box {
+            background: #148f77;
+            padding: 30px;
+            max-width: 350px;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        input, select, button {
+            width: 90%;
+            padding: 12px;
+            margin: 8px;
+        }
+
+        button {
+            background: #f1c40f;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🌡️ Unit Converter</h1>
+
+<input id="value" type="number" placeholder="Temperature">
+
+<select id="unit">
+    <option value="C">Celsius → Fahrenheit</option>
+    <option value="F">Fahrenheit → Celsius</option>
+</select>
+
+<button onclick="convert()">Convert</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+function convert() {
+
+    const value = Number(document.getElementById("value").value);
+    const unit = document.getElementById("unit").value;
+
+    let answer;
+
+    if (unit === "C") {
+        answer = (value * 9 / 5) + 32;
+        result.textContent = answer.toFixed(2) + " °F";
+    } else {
+        answer = (value - 32) * 5 / 9;
+        result.textContent = answer.toFixed(2) + " °C";
+    }
+}
+</script>
+
+</body>
+</html>
