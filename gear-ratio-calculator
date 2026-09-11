@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gear Ratio Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #17202a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding-top: 60px;
+        }
+
+        .box {
+            background: #273746;
+            padding: 30px;
+            width: 350px;
+            border-radius: 15px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: none;
+        }
+
+        button {
+            background: #f39c12;
+            color: white;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>⚙️ Gear Calculator</h1>
+
+    <input id="driver" type="number"
+           placeholder="Driver teeth">
+
+    <input id="driven" type="number"
+           placeholder="Driven teeth">
+
+    <input id="speed" type="number"
+           placeholder="Input speed (RPM)">
+
+    <input id="torque" type="number"
+           placeholder="Input torque (Nm)">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+function calculate() {
+
+    const driver = Number(document.getElementById("driver").value);
+    const driven = Number(document.getElementById("driven").value);
+    const speed = Number(document.getElementById("speed").value);
+    const torque = Number(document.getElementById("torque").value);
+
+    if (driver <= 0 || driven <= 0 || speed <= 0 || torque <= 0) {
+        document.getElementById("result").innerHTML =
+            "Please enter valid values.";
+        return;
+    }
+
+    const ratio = driven / driver;
+    const outputSpeed = speed / ratio;
+    const outputTorque = torque * ratio;
+
+    document.getElementById("result").innerHTML = `
+        <b>Gear Ratio:</b> ${ratio.toFixed(2)} : 1<br>
+        <b>Output Speed:</b> ${outputSpeed.toFixed(2)} RPM<br>
+        <b>Output Torque:</b> ${outputTorque.toFixed(2)} Nm
+    `;
+}
+</script>
+
+</body>
+</html>
