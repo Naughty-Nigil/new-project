@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bolt Stress Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #212f3d;
+            color: white;
+            text-align: center;
+            padding-top: 70px;
+        }
+
+        .box {
+            background: #34495e;
+            padding: 30px;
+            width: 350px;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        input, button {
+            width: 90%;
+            padding: 12px;
+            margin: 8px;
+        }
+
+        button {
+            background: #e67e22;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🔩 Bolt Stress</h1>
+
+<input id="force" placeholder="Force (N)">
+<input id="area" placeholder="Cross-sectional area (mm²)">
+
+<button onclick="calculate()">Calculate Stress</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+function calculate() {
+
+    const force = Number(document.getElementById("force").value);
+    const area = Number(document.getElementById("area").value);
+
+    if (force <= 0 || area <= 0) {
+        result.textContent = "Enter valid values";
+        return;
+    }
+
+    const stress = force / area;
+
+    result.textContent =
+        "Stress = " + stress.toFixed(2) + " MPa";
+}
+</script>
+
+</body>
+</html>
