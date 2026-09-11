@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vehicle Fuel Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #154360;
+            color: white;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .box {
+            background: #1f618d;
+            padding: 30px;
+            width: 350px;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        input, button {
+            width: 90%;
+            padding: 12px;
+            margin: 8px;
+        }
+
+        button {
+            background: #2ecc71;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🚗 Fuel Calculator</h1>
+
+<input id="distance" placeholder="Distance (km)">
+<input id="mileage" placeholder="Mileage (km/L)">
+<input id="price" placeholder="Fuel price per litre">
+
+<button onclick="calculate()">Calculate</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+function calculate() {
+
+    const distance = Number(document.getElementById("distance").value);
+    const mileage = Number(document.getElementById("mileage").value);
+    const price = Number(document.getElementById("price").value);
+
+    if (distance <= 0 || mileage <= 0 || price <= 0) {
+        result.textContent = "Enter valid values";
+        return;
+    }
+
+    const fuel = distance / mileage;
+    const cost = fuel * price;
+
+    result.innerHTML =
+        `Fuel Required: ${fuel.toFixed(2)} L<br>
+         Trip Cost: ₹${cost.toFixed(2)}`;
+}
+</script>
+
+</body>
+</html>
