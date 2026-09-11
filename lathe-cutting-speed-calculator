@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lathe Cutting Speed</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #283747;
+            color: white;
+            text-align: center;
+            padding-top: 70px;
+        }
+
+        .box {
+            background: #34495e;
+            padding: 30px;
+            width: 350px;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        input, button {
+            width: 90%;
+            padding: 12px;
+            margin: 8px;
+        }
+
+        button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🔧 Lathe Calculator</h1>
+
+<input id="diameter" placeholder="Workpiece diameter (mm)">
+<input id="rpm" placeholder="Spindle speed (RPM)">
+
+<button onclick="calculate()">Calculate Speed</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+function calculate() {
+
+    const D = Number(document.getElementById("diameter").value);
+    const N = Number(document.getElementById("rpm").value);
+
+    if (D <= 0 || N <= 0) {
+        result.textContent = "Enter valid values";
+        return;
+    }
+
+    const V = Math.PI * D * N / 1000;
+
+    result.textContent =
+        "Cutting Speed = " + V.toFixed(2) + " m/min";
+}
+</script>
+
+</body>
+</html>
