@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shaft Power Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #17202a;
+            color: white;
+            text-align: center;
+            padding-top: 70px;
+        }
+
+        .box {
+            background: #2c3e50;
+            padding: 30px;
+            max-width: 350px;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        input, button {
+            width: 90%;
+            padding: 12px;
+            margin: 8px;
+        }
+
+        button {
+            background: #9b59b6;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>⚙️ Shaft Power</h1>
+
+<input id="rpm" placeholder="Speed (RPM)">
+<input id="torque" placeholder="Torque (Nm)">
+
+<button onclick="calculate()">Calculate Power</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+function calculate() {
+
+    const N = Number(document.getElementById("rpm").value);
+    const T = Number(document.getElementById("torque").value);
+
+    if (N <= 0 || T <= 0) {
+        result.textContent = "Enter valid values";
+        return;
+    }
+
+    const power = (2 * Math.PI * N * T) / 60;
+
+    result.textContent =
+        "Power = " + (power / 1000).toFixed(2) + " kW";
+}
+</script>
+
+</body>
+</html>
