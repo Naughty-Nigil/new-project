@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Card</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #36d1dc, #5b86e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 280px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px #0004;
+        }
+
+        .icon {
+            font-size: 60px;
+        }
+
+        .temp {
+            font-size: 45px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="icon">☀️</div>
+    <h2>Chennai</h2>
+    <div class="temp">32°C</div>
+    <p>Sunny Day</p>
+    <p>Humidity: 65%</p>
+</div>
+
+</body>
+</html>
