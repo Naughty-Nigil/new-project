@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reynolds Number Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #1a5276;
+            color: white;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .box {
+            background: #21618c;
+            padding: 30px;
+            width: 380px;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        input, button {
+            width: 90%;
+            padding: 12px;
+            margin: 7px;
+        }
+
+        button {
+            background: #48c9b0;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>💨 Reynolds Number</h1>
+
+<input id="rho" placeholder="Density ρ (kg/m³)">
+<input id="velocity" placeholder="Velocity V (m/s)">
+<input id="diameter" placeholder="Diameter D (m)">
+<input id="viscosity" placeholder="Dynamic viscosity μ">
+
+<button onclick="calculate()">Calculate</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+function calculate() {
+
+    const rho = Number(document.getElementById("rho").value);
+    const V = Number(document.getElementById("velocity").value);
+    const D = Number(document.getElementById("diameter").value);
+    const mu = Number(document.getElementById("viscosity").value);
+
+    if (rho <= 0 || V <= 0 || D <= 0 || mu <= 0) {
+        result.textContent = "Enter valid values";
+        return;
+    }
+
+    const Re = (rho * V * D) / mu;
+
+    let type;
+
+    if (Re < 2300) {
+        type = "Laminar Flow";
+    } else if (Re < 4000) {
+        type = "Transitional Flow";
+    } else {
+        type = "Turbulent Flow";
+    }
+
+    result.innerHTML =
+        `Reynolds Number: ${Re.toFixed(0)}<br>${type}`;
+}
+</script>
+
+</body>
+</html>
