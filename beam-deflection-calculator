@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beam Deflection Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #1b2631;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .box {
+            max-width: 400px;
+            margin: auto;
+            background: #34495e;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        input, button {
+            width: 90%;
+            padding: 12px;
+            margin: 8px;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🏗️ Beam Deflection</h1>
+
+<input id="P" placeholder="Load P (N)">
+<input id="L" placeholder="Length L (m)">
+<input id="E" placeholder="Young's Modulus E (Pa)">
+<input id="I" placeholder="Moment of Inertia I (m⁴)">
+
+<button onclick="calculate()">Calculate</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+function calculate() {
+
+    const P = Number(document.getElementById("P").value);
+    const L = Number(document.getElementById("L").value);
+    const E = Number(document.getElementById("E").value);
+    const I = Number(document.getElementById("I").value);
+
+    if (P <= 0 || L <= 0 || E <= 0 || I <= 0) {
+        result.textContent = "Enter valid values";
+        return;
+    }
+
+    const deflection =
+        (P * Math.pow(L, 3)) / (48 * E * I);
+
+    result.textContent =
+        "Deflection = " + deflection.toExponential(4) + " m";
+}
+</script>
+
+</body>
+</html>
